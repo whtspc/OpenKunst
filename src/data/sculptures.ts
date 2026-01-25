@@ -2,6 +2,7 @@ import type { Sculpture } from '../types/Sculpture';
 
 // Real sculpture data from Dijk en Waard (Heerhugowaard area)
 // Source: https://nl.wikipedia.org/wiki/Lijst_van_beelden_in_Dijk_en_Waard
+// Images: Wikimedia Commons (CC BY-SA 3.0)
 export const sculptures: Sculpture[] = [
   {
     id: '1',
@@ -53,7 +54,7 @@ export const sculptures: Sculpture[] = [
       city: 'Heerhugowaard'
     },
     images: [
-      'https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?w=800&h=1200&fit=crop'
+      'https://commons.wikimedia.org/wiki/Special:FilePath/Pandabeer_Klaas_van_de_Berg_Reuzenpandasingel_Heerhugowaard.JPG?width=800'
     ],
     tags: ['steen', 'dier', 'figuratief']
   },
@@ -71,7 +72,7 @@ export const sculptures: Sculpture[] = [
       city: 'Heerhugowaard'
     },
     images: [
-      'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&h=1200&fit=crop'
+      'https://commons.wikimedia.org/wiki/Special:FilePath/Oostpoort-Arcadia_Lucien_den_Arend_Reina_Prinsen-Geerligstuin_Heerhugowaard.JPG?width=800'
     ],
     tags: ['staal', 'landschapskunst', 'monumentaal']
   },
@@ -103,11 +104,11 @@ export const sculptures: Sculpture[] = [
     location: {
       lat: 52.6645,
       lng: 4.8267,
-      address: 'Centrum',
+      address: 'Oostertocht',
       city: 'Heerhugowaard'
     },
     images: [
-      'https://images.unsplash.com/photo-1577083552431-6e5fd01988ec?w=800&h=1200&fit=crop'
+      'https://commons.wikimedia.org/wiki/Special:FilePath/Vrouwen_Uit_Het_Verzet_Elly_Baltus_Oostertocht_Heerhugowaard.JPG?width=800'
     ],
     tags: ['brons', 'oorlogsmonument', 'figuratief']
   },
@@ -121,11 +122,11 @@ export const sculptures: Sculpture[] = [
     location: {
       lat: 52.6712,
       lng: 4.8356,
-      address: 'Noord',
+      address: 'Dolomiet',
       city: 'Heerhugowaard'
     },
     images: [
-      'https://images.unsplash.com/photo-1561839561-b13bcfe95249?w=800&h=1200&fit=crop'
+      'https://commons.wikimedia.org/wiki/Special:FilePath/Aarde_en_Water_Nic_Jonk_Heerhugowaard_Dolomiet.JPG?width=800'
     ],
     tags: ['brons', 'natuur', 'symbolisch']
   },
@@ -139,11 +140,11 @@ export const sculptures: Sculpture[] = [
     location: {
       lat: 52.6598,
       lng: 4.8445,
-      address: 'Oost',
+      address: 'Westerweg',
       city: 'Heerhugowaard'
     },
     images: [
-      'https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=800&h=1200&fit=crop'
+      'https://commons.wikimedia.org/wiki/Special:FilePath/De_Wachter_Nic_Jonk_Westerweg_Heerhugowaard.jpg?width=800'
     ],
     tags: ['brons', 'figuratief', 'monumentaal']
   },
@@ -157,11 +158,11 @@ export const sculptures: Sculpture[] = [
     location: {
       lat: 52.6634,
       lng: 4.8178,
-      address: 'West',
+      address: 'Diamant',
       city: 'Heerhugowaard'
     },
     images: [
-      'https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=800&h=1200&fit=crop'
+      'https://commons.wikimedia.org/wiki/Special:FilePath/Poezieboom_Peter_Louman_Diamant_Heerhugowaard.JPG?width=800'
     ],
     tags: ['metaal', 'literatuur', 'natuur']
   },
@@ -179,14 +180,14 @@ export const sculptures: Sculpture[] = [
       city: 'Heerhugowaard'
     },
     images: [
-      'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=1200&fit=crop'
+      'https://commons.wikimedia.org/wiki/Special:FilePath/Vrij_als_een_vogel_vogelvrij_Roland_de_Jong-Orlando_Heerhugowaard.JPG?width=800'
     ],
     tags: ['brons', 'vogel', 'vrijheid']
   },
   {
     id: '11',
     name: 'Bloem in de knop - Pulserend hart',
-    artist: 'Wiesław Oźmina',
+    artist: 'Wieslaw Ozmina',
     year: null,
     description: 'Een abstract kunstwerk dat de energie van een bloem in knop en een kloppend hart uitbeeldt.',
     materials: ['Staal'],
@@ -197,7 +198,7 @@ export const sculptures: Sculpture[] = [
       city: 'Heerhugowaard'
     },
     images: [
-      'https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=800&h=1200&fit=crop'
+      'https://commons.wikimedia.org/wiki/Special:FilePath/Bloem_in_de_knop-Pulserend_hart_Wies%C5%82aw_O%C5%BAmina_Heerhugowaard.JPG?width=800'
     ],
     tags: ['staal', 'abstract', 'natuur']
   },
@@ -211,11 +212,11 @@ export const sculptures: Sculpture[] = [
     location: {
       lat: 52.6623,
       lng: 4.8489,
-      address: 'De Draai',
+      address: 'Gerrit Rietveldweg',
       city: 'Heerhugowaard'
     },
     images: [
-      'https://images.unsplash.com/photo-1549887534-1541e9326642?w=800&h=1200&fit=crop'
+      'https://commons.wikimedia.org/wiki/Special:FilePath/Capella_Marcel_Smink_Gerrit_Rietveldweg_Heerhugowaard1.JPG?width=800'
     ],
     tags: ['rvs', 'astronomie', 'abstract']
   },
