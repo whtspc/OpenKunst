@@ -5,9 +5,10 @@ import './SculptureDetail.css';
 interface SculptureDetailProps {
   sculpture: SculptureWithDistance;
   onClose: () => void;
+  onSelectArtist: (artistName: string) => void;
 }
 
-export function SculptureDetail({ sculpture, onClose }: SculptureDetailProps) {
+export function SculptureDetail({ sculpture, onClose, onSelectArtist }: SculptureDetailProps) {
   const mapUrl = `https://www.openstreetmap.org/export/embed.html?bbox=${sculpture.location.lng - 0.005}%2C${sculpture.location.lat - 0.003}%2C${sculpture.location.lng + 0.005}%2C${sculpture.location.lat + 0.003}&layer=mapnik&marker=${sculpture.location.lat}%2C${sculpture.location.lng}`;
 
   const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${sculpture.location.lat},${sculpture.location.lng}`;
@@ -47,7 +48,13 @@ export function SculptureDetail({ sculpture, onClose }: SculptureDetailProps) {
           <h1 className="sculpture-detail__title">{sculpture.name}</h1>
 
           <p className="sculpture-detail__artist">
-            by <strong>{sculpture.artist}</strong>
+            by{' '}
+            <button
+              className="sculpture-detail__artist-link"
+              onClick={() => onSelectArtist(sculpture.artist)}
+            >
+              {sculpture.artist}
+            </button>
             {sculpture.year && <span> ({sculpture.year})</span>}
           </p>
 

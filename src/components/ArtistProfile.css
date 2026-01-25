@@ -1,0 +1,289 @@
+.artist-profile {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  z-index: 100;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.artist-profile__header {
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 1rem;
+  padding-top: calc(1rem + env(safe-area-inset-top, 0));
+  border-bottom: 1px solid #eee;
+  z-index: 10;
+}
+
+.artist-profile__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin: -0.5rem;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.artist-profile__back:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.artist-profile__back svg {
+  width: 20px;
+  height: 20px;
+}
+
+.artist-profile__content {
+  padding-bottom: calc(2rem + env(safe-area-inset-bottom, 0));
+}
+
+.artist-profile__image-container {
+  width: 100%;
+  height: 40vh;
+  overflow: hidden;
+}
+
+.artist-profile__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.artist-profile__info {
+  padding: 1.5rem;
+}
+
+.artist-profile__name {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 0.75rem 0;
+  color: #1a1a1a;
+  line-height: 1.2;
+}
+
+.artist-profile__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.artist-profile__lifespan,
+.artist-profile__nationality {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #f0f0f0;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.artist-profile__lifespan svg,
+.artist-profile__nationality svg {
+  width: 16px;
+  height: 16px;
+}
+
+.artist-profile__section {
+  margin-bottom: 2rem;
+}
+
+.artist-profile__section h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 0.75rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.artist-profile__section p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+  margin: 0;
+}
+
+.artist-profile__website {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #1a1a1a;
+  color: white;
+  text-decoration: none;
+  padding: 0.9rem 1.5rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.artist-profile__website:hover {
+  background: #333;
+  transform: scale(1.02);
+}
+
+.artist-profile__website:active {
+  transform: scale(0.98);
+}
+
+.artist-profile__website svg {
+  width: 18px;
+  height: 18px;
+}
+
+.artist-profile__sculptures {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.artist-profile__sculpture-card {
+  display: flex;
+  gap: 1rem;
+  background: #f8f8f8;
+  border: none;
+  border-radius: 12px;
+  padding: 0.75rem;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.2s, transform 0.2s;
+  width: 100%;
+}
+
+.artist-profile__sculpture-card:hover {
+  background: #f0f0f0;
+}
+
+.artist-profile__sculpture-card:active {
+  transform: scale(0.98);
+}
+
+.artist-profile__sculpture-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.artist-profile__sculpture-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.artist-profile__sculpture-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 0.25rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.artist-profile__sculpture-location {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0 0 0.5rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.artist-profile__sculpture-distance {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.artist-profile__sculpture-distance svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .artist-profile {
+    background: #1a1a1a;
+  }
+
+  .artist-profile__header {
+    background: rgba(26, 26, 26, 0.95);
+    border-bottom-color: #333;
+  }
+
+  .artist-profile__back {
+    color: #fff;
+  }
+
+  .artist-profile__back:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .artist-profile__name {
+    color: #fff;
+  }
+
+  .artist-profile__lifespan,
+  .artist-profile__nationality {
+    background: #333;
+    color: #ccc;
+  }
+
+  .artist-profile__section h2 {
+    color: #ddd;
+  }
+
+  .artist-profile__section p {
+    color: #bbb;
+  }
+
+  .artist-profile__website {
+    background: #fff;
+    color: #1a1a1a;
+  }
+
+  .artist-profile__website:hover {
+    background: #eee;
+  }
+
+  .artist-profile__sculpture-card {
+    background: #2a2a2a;
+  }
+
+  .artist-profile__sculpture-card:hover {
+    background: #333;
+  }
+
+  .artist-profile__sculpture-name {
+    color: #fff;
+  }
+
+  .artist-profile__sculpture-location {
+    color: #aaa;
+  }
+
+  .artist-profile__sculpture-distance {
+    color: #888;
+  }
+}
