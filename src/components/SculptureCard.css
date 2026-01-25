@@ -1,3 +1,7 @@
+/* ═══════════════════════════════════════════════════════════
+   SCULPTURE CARD - Immersive Gallery View
+   ═══════════════════════════════════════════════════════════ */
+
 .sculpture-card {
   position: relative;
   width: 100%;
@@ -6,9 +10,10 @@
   scroll-snap-align: start;
   cursor: pointer;
   overflow: hidden;
-  background: #000;
+  background: var(--color-bg);
 }
 
+/* Image Container */
 .sculpture-card__image-container {
   position: absolute;
   inset: 0;
@@ -18,112 +23,170 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform var(--transition-slow);
 }
 
+.sculpture-card:hover .sculpture-card__image {
+  transform: scale(1.02);
+}
+
+/* Gradient Overlay - Dramatic cinematic effect */
 .sculpture-card__gradient {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 60%;
+  height: 70%;
   background: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.9) 0%,
-    rgba(0, 0, 0, 0.6) 40%,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(0, 0, 0, 0.7) 30%,
+    rgba(0, 0, 0, 0.3) 60%,
     transparent 100%
   );
+  pointer-events: none;
 }
 
+/* Content Container */
 .sculpture-card__content {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 1.5rem;
-  padding-bottom: calc(1.5rem + env(safe-area-inset-bottom, 0));
+  padding: var(--space-6);
+  padding-bottom: calc(var(--space-8) + env(safe-area-inset-bottom, 0));
   color: white;
-  z-index: 1;
+  z-index: var(--z-elevated);
 }
 
+/* Distance Badge */
 .sculpture-card__distance {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  padding: 0.4rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  margin-bottom: 0.8rem;
+  gap: var(--space-2);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  margin-bottom: var(--space-4);
 }
 
 .sculpture-card__location-icon {
   width: 14px;
   height: 14px;
+  opacity: 0.8;
 }
 
+/* Typography */
 .sculpture-card__title {
-  font-size: 1.75rem;
-  font-weight: 700;
-  margin: 0 0 0.3rem 0;
-  line-height: 1.2;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-tight);
+  margin: 0 0 var(--space-2) 0;
+  line-height: 1.1;
 }
 
 .sculpture-card__artist {
-  font-size: 1rem;
-  margin: 0 0 0.5rem 0;
-  opacity: 0.9;
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-normal);
+  margin: 0 0 var(--space-1) 0;
+  opacity: 0.85;
+  letter-spacing: 0.01em;
 }
 
 .sculpture-card__location {
-  font-size: 0.9rem;
-  margin: 0 0 0.8rem 0;
-  opacity: 0.75;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  margin: 0 0 var(--space-4) 0;
+  opacity: 0.6;
+  letter-spacing: 0.01em;
 }
 
+/* Tags */
 .sculpture-card__tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
 }
 
 .sculpture-card__tag {
-  background: rgba(255, 255, 255, 0.15);
-  padding: 0.3rem 0.7rem;
-  border-radius: 15px;
-  font-size: 0.75rem;
-  text-transform: lowercase;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
 }
 
+/* CTA Button */
 .sculpture-card__cta {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--space-3);
   background: white;
-  color: #1a1a1a;
-  border: none;
-  padding: 0.75rem 1.25rem;
-  border-radius: 25px;
-  font-size: 0.95rem;
-  font-weight: 600;
+  color: var(--color-text);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-md);
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: all var(--transition-fast);
+  border: none;
 }
 
 .sculpture-card__cta:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  background: var(--color-accent);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
 }
 
 .sculpture-card__cta:active {
-  transform: scale(0.98);
+  transform: translateY(0);
 }
 
 .sculpture-card__arrow {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
+  transition: transform var(--transition-fast);
+}
+
+.sculpture-card__cta:hover .sculpture-card__arrow {
+  transform: translateX(4px);
+}
+
+/* Decorative frame accent */
+.sculpture-card::before {
+  content: '';
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-4);
+  right: var(--space-4);
+  bottom: var(--space-4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  pointer-events: none;
+  z-index: var(--z-elevated);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.sculpture-card:hover::before {
+  opacity: 1;
 }
