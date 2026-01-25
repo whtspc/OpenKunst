@@ -6,39 +6,46 @@ const NO_IMAGE = `${import.meta.env.BASE_URL}no-image.svg`;
 // Real sculpture data from Dijk en Waard (Heerhugowaard area)
 // Source: https://nl.wikipedia.org/wiki/Lijst_van_beelden_in_Dijk_en_Waard
 // Images: Wikimedia Commons (CC BY-SA 3.0)
+// Ordered: Nic Jonk first, then other sculptures with images, then no-image sculptures
 export const sculptures: Sculpture[] = [
+  // === Nic Jonk sculptures (featured) ===
   {
-    id: '1',
-    name: 'Moeder en Kind',
-    artist: 'Theo Mulder',
+    id: '7',
+    name: 'Aarde en Water',
+    artist: 'Nic Jonk',
     year: null,
-    description: 'Een bronzen sculptuur van een moeder met kind, geplaatst op het Raadhuisplein in het centrum van Heerhugowaard.',
+    description: 'Een sculptuur die de elementen aarde en water symboliseert, typisch voor het werk van Nic Jonk.',
     materials: ['Brons'],
     location: {
-      lat: 52.6673,
-      lng: 4.8305,
-      address: 'Raadhuisplein',
+      lat: 52.6712,
+      lng: 4.8356,
+      address: 'Dolomiet',
       city: 'Heerhugowaard'
     },
-    images: [NO_IMAGE],
-    tags: ['brons', 'figuratief', 'familie']
+    images: [
+      'https://commons.wikimedia.org/wiki/Special:FilePath/Aarde_en_Water_Nic_Jonk_Heerhugowaard_Dolomiet.JPG?width=800'
+    ],
+    tags: ['brons', 'natuur', 'symbolisch']
   },
   {
-    id: '2',
-    name: 'Muzikale verbinding van drie pleinen',
-    artist: 'Adriaan Rees',
+    id: '8',
+    name: 'De Wachter',
+    artist: 'Nic Jonk',
     year: null,
-    description: 'Een kunstwerk dat de drie pleinen van het Stadshart met elkaar verbindt door middel van muzikale elementen.',
-    materials: ['Metaal'],
+    description: 'Een imposant bronzen beeld dat als wachter over de omgeving lijkt te waken.',
+    materials: ['Brons'],
     location: {
-      lat: 52.6652,
-      lng: 4.8348,
-      address: 'Stationsplein',
+      lat: 52.6598,
+      lng: 4.8445,
+      address: 'Westerweg',
       city: 'Heerhugowaard'
     },
-    images: [NO_IMAGE],
-    tags: ['metaal', 'muziek', 'abstract']
+    images: [
+      'https://commons.wikimedia.org/wiki/Special:FilePath/De_Wachter_Nic_Jonk_Westerweg_Heerhugowaard.jpg?width=800'
+    ],
+    tags: ['brons', 'figuratief', 'monumentaal']
   },
+  // === Other sculptures with images ===
   {
     id: '3',
     name: 'Pandabeer',
@@ -76,22 +83,6 @@ export const sculptures: Sculpture[] = [
     tags: ['staal', 'landschapskunst', 'monumentaal']
   },
   {
-    id: '5',
-    name: 'Koffiepot',
-    artist: 'Klaas Gubbels',
-    year: null,
-    description: 'Een karakteristiek beeld van een koffiepot door de bekende Nederlandse kunstenaar Klaas Gubbels, bekend om zijn koffiepot-thema.',
-    materials: ['Brons'],
-    location: {
-      lat: 52.6668,
-      lng: 4.8289,
-      address: 'Stadshart',
-      city: 'Heerhugowaard'
-    },
-    images: [NO_IMAGE],
-    tags: ['brons', 'pop art', 'iconisch']
-  },
-  {
     id: '6',
     name: 'Vrouwen Uit Het Verzet',
     artist: 'Elly Baltus',
@@ -108,42 +99,6 @@ export const sculptures: Sculpture[] = [
       'https://commons.wikimedia.org/wiki/Special:FilePath/Vrouwen_Uit_Het_Verzet_Elly_Baltus_Oostertocht_Heerhugowaard.JPG?width=800'
     ],
     tags: ['brons', 'oorlogsmonument', 'figuratief']
-  },
-  {
-    id: '7',
-    name: 'Aarde en Water',
-    artist: 'Nic Jonk',
-    year: null,
-    description: 'Een sculptuur die de elementen aarde en water symboliseert, typisch voor het werk van Nic Jonk.',
-    materials: ['Brons'],
-    location: {
-      lat: 52.6712,
-      lng: 4.8356,
-      address: 'Dolomiet',
-      city: 'Heerhugowaard'
-    },
-    images: [
-      'https://commons.wikimedia.org/wiki/Special:FilePath/Aarde_en_Water_Nic_Jonk_Heerhugowaard_Dolomiet.JPG?width=800'
-    ],
-    tags: ['brons', 'natuur', 'symbolisch']
-  },
-  {
-    id: '8',
-    name: 'De Wachter',
-    artist: 'Nic Jonk',
-    year: null,
-    description: 'Een imposant bronzen beeld dat als wachter over de omgeving lijkt te waken.',
-    materials: ['Brons'],
-    location: {
-      lat: 52.6598,
-      lng: 4.8445,
-      address: 'Westerweg',
-      city: 'Heerhugowaard'
-    },
-    images: [
-      'https://commons.wikimedia.org/wiki/Special:FilePath/De_Wachter_Nic_Jonk_Westerweg_Heerhugowaard.jpg?width=800'
-    ],
-    tags: ['brons', 'figuratief', 'monumentaal']
   },
   {
     id: '9',
@@ -216,6 +171,55 @@ export const sculptures: Sculpture[] = [
       'https://commons.wikimedia.org/wiki/Special:FilePath/Capella_Marcel_Smink_Gerrit_Rietveldweg_Heerhugowaard1.JPG?width=800'
     ],
     tags: ['rvs', 'astronomie', 'abstract']
+  },
+  // === Sculptures without images ===
+  {
+    id: '1',
+    name: 'Moeder en Kind',
+    artist: 'Theo Mulder',
+    year: null,
+    description: 'Een bronzen sculptuur van een moeder met kind, geplaatst op het Raadhuisplein in het centrum van Heerhugowaard.',
+    materials: ['Brons'],
+    location: {
+      lat: 52.6673,
+      lng: 4.8305,
+      address: 'Raadhuisplein',
+      city: 'Heerhugowaard'
+    },
+    images: [NO_IMAGE],
+    tags: ['brons', 'figuratief', 'familie']
+  },
+  {
+    id: '2',
+    name: 'Muzikale verbinding van drie pleinen',
+    artist: 'Adriaan Rees',
+    year: null,
+    description: 'Een kunstwerk dat de drie pleinen van het Stadshart met elkaar verbindt door middel van muzikale elementen.',
+    materials: ['Metaal'],
+    location: {
+      lat: 52.6652,
+      lng: 4.8348,
+      address: 'Stationsplein',
+      city: 'Heerhugowaard'
+    },
+    images: [NO_IMAGE],
+    tags: ['metaal', 'muziek', 'abstract']
+  },
+  {
+    id: '5',
+    name: 'Koffiepot',
+    artist: 'Klaas Gubbels',
+    year: null,
+    description: 'Een karakteristiek beeld van een koffiepot door de bekende Nederlandse kunstenaar Klaas Gubbels, bekend om zijn koffiepot-thema.',
+    materials: ['Brons'],
+    location: {
+      lat: 52.6668,
+      lng: 4.8289,
+      address: 'Stadshart',
+      city: 'Heerhugowaard'
+    },
+    images: [NO_IMAGE],
+    tags: ['brons', 'pop art', 'iconisch']
   },
   {
     id: '13',
