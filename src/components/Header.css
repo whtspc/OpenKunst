@@ -1,0 +1,88 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  padding-top: calc(0.75rem + env(safe-area-inset-top, 0));
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5) 0%,
+    transparent 100%
+  );
+  z-index: 50;
+  pointer-events: none;
+}
+
+.header__logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  pointer-events: auto;
+}
+
+.header__location {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: none;
+  padding: 0.5rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  pointer-events: auto;
+}
+
+.header__location:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.header__location svg {
+  width: 16px;
+  height: 16px;
+}
+
+.header__location--granted {
+  background: rgba(34, 197, 94, 0.3);
+}
+
+.header__location--granted:hover {
+  background: rgba(34, 197, 94, 0.4);
+}
+
+.header__location--denied {
+  background: rgba(239, 68, 68, 0.3);
+}
+
+.header__location--denied:hover {
+  background: rgba(239, 68, 68, 0.4);
+}
+
+.header__location--loading {
+  background: rgba(234, 179, 8, 0.3);
+}
+
+.header__location-text {
+  white-space: nowrap;
+}
+
+@media (max-width: 360px) {
+  .header__location-text {
+    display: none;
+  }
+
+  .header__location {
+    padding: 0.5rem;
+  }
+}

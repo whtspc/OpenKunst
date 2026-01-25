@@ -1,0 +1,129 @@
+.sculpture-card {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  scroll-snap-align: start;
+  cursor: pointer;
+  overflow: hidden;
+  background: #000;
+}
+
+.sculpture-card__image-container {
+  position: absolute;
+  inset: 0;
+}
+
+.sculpture-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sculpture-card__gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.6) 40%,
+    transparent 100%
+  );
+}
+
+.sculpture-card__content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  padding-bottom: calc(1.5rem + env(safe-area-inset-bottom, 0));
+  color: white;
+  z-index: 1;
+}
+
+.sculpture-card__distance {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.sculpture-card__location-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.sculpture-card__title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 0 0.3rem 0;
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.sculpture-card__artist {
+  font-size: 1rem;
+  margin: 0 0 0.5rem 0;
+  opacity: 0.9;
+}
+
+.sculpture-card__location {
+  font-size: 0.9rem;
+  margin: 0 0 0.8rem 0;
+  opacity: 0.75;
+}
+
+.sculpture-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.sculpture-card__tag {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.3rem 0.7rem;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  text-transform: lowercase;
+}
+
+.sculpture-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  color: #1a1a1a;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.sculpture-card__cta:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.sculpture-card__cta:active {
+  transform: scale(0.98);
+}
+
+.sculpture-card__arrow {
+  width: 18px;
+  height: 18px;
+}
