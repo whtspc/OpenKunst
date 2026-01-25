@@ -1,5 +1,8 @@
 import type { Sculpture } from '../types/Sculpture';
 
+// Placeholder for sculptures without available images
+const NO_IMAGE = `${import.meta.env.BASE_URL}no-image.svg`;
+
 // Real sculpture data from Dijk en Waard (Heerhugowaard area)
 // Source: https://nl.wikipedia.org/wiki/Lijst_van_beelden_in_Dijk_en_Waard
 // Images: Wikimedia Commons (CC BY-SA 3.0)
@@ -17,9 +20,7 @@ export const sculptures: Sculpture[] = [
       address: 'Raadhuisplein',
       city: 'Heerhugowaard'
     },
-    images: [
-      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=1200&fit=crop'
-    ],
+    images: [NO_IMAGE],
     tags: ['brons', 'figuratief', 'familie']
   },
   {
@@ -35,9 +36,7 @@ export const sculptures: Sculpture[] = [
       address: 'Stationsplein',
       city: 'Heerhugowaard'
     },
-    images: [
-      'https://images.unsplash.com/photo-1544413660-299165566b1d?w=800&h=1200&fit=crop'
-    ],
+    images: [NO_IMAGE],
     tags: ['metaal', 'muziek', 'abstract']
   },
   {
@@ -89,9 +88,7 @@ export const sculptures: Sculpture[] = [
       address: 'Stadshart',
       city: 'Heerhugowaard'
     },
-    images: [
-      'https://images.unsplash.com/photo-1511920170033-f8396924c348?w=800&h=1200&fit=crop'
-    ],
+    images: [NO_IMAGE],
     tags: ['brons', 'pop art', 'iconisch']
   },
   {
@@ -233,9 +230,7 @@ export const sculptures: Sculpture[] = [
       address: 'Westtangent',
       city: 'Heerhugowaard'
     },
-    images: [
-      'https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=800&h=1200&fit=crop'
-    ],
+    images: [NO_IMAGE],
     tags: ['brons', 'landbouw', 'geschiedenis']
   },
   {
@@ -251,9 +246,7 @@ export const sculptures: Sculpture[] = [
       address: 'Stadshart Noord',
       city: 'Heerhugowaard'
     },
-    images: [
-      'https://images.unsplash.com/photo-1567879265649-0f03e90ccca5?w=800&h=1200&fit=crop'
-    ],
+    images: [NO_IMAGE],
     tags: ['interactief', 'water', 'speels']
   },
   {
@@ -269,9 +262,7 @@ export const sculptures: Sculpture[] = [
       address: 'Stadshart',
       city: 'Heerhugowaard'
     },
-    images: [
-      'https://images.unsplash.com/photo-1584811644165-33db3b146db5?w=800&h=1200&fit=crop'
-    ],
+    images: [NO_IMAGE],
     tags: ['steen', 'monument', 'mensenrechten']
   }
 ];
