@@ -2,6 +2,8 @@ import type { SculptureWithDistance } from '../types/Sculpture';
 import { formatDistance } from '../utils/geolocation';
 import './SculptureDetail.css';
 
+const PLACEHOLDER_IMAGE = `${import.meta.env.BASE_URL}no-image.svg`;
+
 interface SculptureDetailProps {
   sculpture: SculptureWithDistance;
   onClose: () => void;
@@ -12,6 +14,8 @@ export function SculptureDetail({ sculpture, onClose, onSelectArtist }: Sculptur
   const mapUrl = `https://www.openstreetmap.org/export/embed.html?bbox=${sculpture.location.lng - 0.005}%2C${sculpture.location.lat - 0.003}%2C${sculpture.location.lng + 0.005}%2C${sculpture.location.lat + 0.003}&layer=mapnik&marker=${sculpture.location.lat}%2C${sculpture.location.lng}`;
 
   const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${sculpture.location.lat},${sculpture.location.lng}`;
+
+  const images = sculpture.images.length > 0 ? sculpture.images : [PLACEHOLDER_IMAGE];
 
   return (
     <div className="sculpture-detail">
@@ -26,7 +30,7 @@ export function SculptureDetail({ sculpture, onClose, onSelectArtist }: Sculptur
 
       <div className="sculpture-detail__content">
         <div className="sculpture-detail__images">
-          {sculpture.images.map((image, index) => (
+          {images.map((image, index) => (
             <img
               key={index}
               src={image}

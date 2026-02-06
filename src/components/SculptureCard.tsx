@@ -2,17 +2,21 @@ import type { SculptureWithDistance } from '../types/Sculpture';
 import { formatDistance } from '../utils/geolocation';
 import './SculptureCard.css';
 
+const PLACEHOLDER_IMAGE = `${import.meta.env.BASE_URL}no-image.svg`;
+
 interface SculptureCardProps {
   sculpture: SculptureWithDistance;
   onClick: () => void;
 }
 
 export function SculptureCard({ sculpture, onClick }: SculptureCardProps) {
+  const imageUrl = sculpture.images[0] || PLACEHOLDER_IMAGE;
+
   return (
     <article className="sculpture-card" onClick={onClick}>
       <div className="sculpture-card__image-container">
         <img
-          src={sculpture.images[0]}
+          src={imageUrl}
           alt={sculpture.name}
           className="sculpture-card__image"
           loading="lazy"

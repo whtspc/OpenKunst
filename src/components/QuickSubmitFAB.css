@@ -1,0 +1,40 @@
+.quick-submit-fab {
+  position: fixed;
+  bottom: calc(1.5rem + env(safe-area-inset-bottom));
+  right: 1.5rem;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #4a90d9;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(74, 144, 217, 0.4);
+  z-index: 50;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  text-decoration: none;
+}
+
+.quick-submit-fab svg {
+  width: 24px;
+  height: 24px;
+}
+
+.quick-submit-fab:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 24px rgba(74, 144, 217, 0.5);
+  background: #3a7bc8;
+}
+
+.quick-submit-fab:active {
+  transform: scale(0.98);
+}
+
+/* Hide on tablet/desktop - less needed with desktop header nav */
+@media (min-width: 768px) {
+  .quick-submit-fab {
+    bottom: 2rem;
+    right: 2rem;
+  }
+}

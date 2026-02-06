@@ -45,6 +45,13 @@
   background: var(--color-accent);
 }
 
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  pointer-events: auto;
+}
+
 /* Location Button */
 .header__location {
   display: inline-flex;

@@ -1,0 +1,123 @@
+.user-menu {
+  position: relative;
+}
+
+.user-menu__login-btn {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.user-menu__login-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.user-menu__trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.user-menu__avatar {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #4a90d9 0%, #357abd 100%);
+  border-radius: 50%;
+  color: white;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.user-menu__badge {
+  padding: 0.125rem 0.5rem;
+  background: rgba(74, 144, 217, 0.2);
+  border-radius: 9999px;
+  color: #4a90d9;
+  font-size: 0.625rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.user-menu__dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 220px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  z-index: 100;
+}
+
+.user-menu__header {
+  padding: 1rem;
+  background: #f8f9fa;
+}
+
+.user-menu__name {
+  display: block;
+  font-weight: 600;
+  color: #333;
+}
+
+.user-menu__email {
+  display: block;
+  font-size: 0.75rem;
+  color: #666;
+  margin-top: 0.125rem;
+}
+
+.user-menu__divider {
+  height: 1px;
+  background: #eee;
+}
+
+.user-menu__item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 0.875rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.user-menu__item:hover {
+  background: #f8f9fa;
+}
+
+.user-menu__item svg {
+  width: 18px;
+  height: 18px;
+  color: #666;
+}
+
+.user-menu__item--danger {
+  color: #dc2626;
+}
+
+.user-menu__item--danger svg {
+  color: #dc2626;
+}
