@@ -4,6 +4,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { useGPSCapture } from '../hooks/useGPSCapture';
 import { submissionsApi } from '../api/submissions';
 import { uploadImages } from '../utils/imageUpload';
+import { MapPicker } from '../components/MapPicker';
 import './NewSubmission.css';
 
 const MAX_IMAGES = 5;
@@ -29,8 +30,6 @@ export function NewSubmission() {
   const [name, setName] = useState('');
   const [artist, setArtist] = useState('');
   const [description, setDescription] = useState('');
-  const [manualLat, setManualLat] = useState('');
-  const [manualLng, setManualLng] = useState('');
   const [showManualLocation, setShowManualLocation] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [uploadProgress, setUploadProgress] = useState(0);
@@ -74,25 +73,6 @@ export function NewSubmission() {
 
   const handleGallerySelect = () => {
     galleryInputRef.current?.click();
-  };
-
-  const handleManualLocationSubmit = () => {
-    const lat = parseFloat(manualLat);
-    const lng = parseFloat(manualLng);
-
-    if (isNaN(lat) || isNaN(lng)) {
-      setError('Please enter valid coordinates');
-      return;
-    }
-
-    if (lat < -90 || lat > 90 || lng < -180 || lng > 180) {
-      setError('Coordinates out of range');
-      return;
-    }
-
-    setManualLocation(lat, lng);
-    setShowManualLocation(false);
-    setError(null);
   };
 
   const handleContinue = () => {
@@ -360,31 +340,14 @@ export function NewSubmission() {
               </div>
 
               {showManualLocation && (
-                <div className="new-submission__manual-location">
-                  <div className="new-submission__manual-fields">
-                    <input
-                      type="text"
-                      placeholder="Latitude (e.g. 52.6324)"
-                      value={manualLat}
-                      onChange={(e) => setManualLat(e.target.value)}
-                      className="new-submission__input"
-                    />
-                    <input
-                      type="text"
-                      placeholder="Longitude (e.g. 4.7534)"
-                      value={manualLng}
-                      onChange={(e) => setManualLng(e.target.value)}
-                      className="new-submission__input"
-                    />
-                  </div>
-                  <button
-                    type="button"
-                    className="new-submission__manual-submit"
-                    onClick={handleManualLocationSubmit}
-                  >
-                    Set Location
-                  </button>
-                </div>
+                <MapPicker
+                  location={location}
+                  onLocationSelect={(lat, lng) => {
+                    setManualLocation(lat, lng);
+                    setShowManualLocation(false);
+                  }}
+                  height={250}
+                />
               )}
             </div>
 

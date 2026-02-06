@@ -1,0 +1,27 @@
+.map-picker {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.map-picker__map {
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.map-picker__hint {
+  margin: 0.5rem 0 0;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+}
+
+/* Ensure Leaflet controls are visible against dark background */
+.map-picker .leaflet-control-zoom a {
+  color: #333;
+}
+
+.map-picker .leaflet-control-attribution {
+  font-size: 10px;
+}
