@@ -7,7 +7,7 @@ const PLACEHOLDER_IMAGE = `${import.meta.env.BASE_URL}no-image.svg`;
 interface SculptureDetailProps {
   sculpture: SculptureWithDistance;
   onClose: () => void;
-  onSelectArtist: (artistName: string) => void;
+  onSelectArtist?: (artistName: string) => void;
 }
 
 export function SculptureDetail({ sculpture, onClose, onSelectArtist }: SculptureDetailProps) {
@@ -53,12 +53,16 @@ export function SculptureDetail({ sculpture, onClose, onSelectArtist }: Sculptur
 
           <p className="sculpture-detail__artist">
             by{' '}
-            <button
-              className="sculpture-detail__artist-link"
-              onClick={() => onSelectArtist(sculpture.artist)}
-            >
-              {sculpture.artist}
-            </button>
+            {onSelectArtist ? (
+              <button
+                className="sculpture-detail__artist-link"
+                onClick={() => onSelectArtist(sculpture.artist)}
+              >
+                {sculpture.artist}
+              </button>
+            ) : (
+              <strong>{sculpture.artist}</strong>
+            )}
             {sculpture.year && <span> ({sculpture.year})</span>}
           </p>
 
